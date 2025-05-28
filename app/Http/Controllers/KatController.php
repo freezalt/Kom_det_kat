@@ -21,11 +21,13 @@ class KatController extends Controller
 
     public function store(Request $request)
         {
+
             $request->validate([
                 'pavadinimas' => 'required|string',
+                'apibudinimas' => 'required|string',
+                'kaina' => 'required|numeric',
                 ]);
-
-        komponentas::create($request->only('pavadinimas'));
-        return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
+            Komponentas::create($request->only('pavadinimas', 'apibudinimas', 'kaina'));
+            return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
         }
 }

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('komponentas', function (Blueprint $table) {
             $table->id();
             $table->string('pavadinimas');
-            $table->text('apibudinimas');
+            $table->string('apibudinimas');
             $table->decimal('kaina', 10, 2);
             $table->foreignId('kategorija_id')->reference("id")->on("kategorija");
             $table->foreignId('gamintojas_id')->reference("id")->on("gamintojas");

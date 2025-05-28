@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class komponentas extends Model
 {
     use HasFactory;
+
+    protected $table = 'komponentas';
+
     protected $fillable = ['pavadinimas', 'apibūdinimas', 'kaina'];
     //
 }
