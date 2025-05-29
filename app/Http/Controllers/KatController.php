@@ -36,7 +36,7 @@ class KatController extends Controller
                 'kategorija_id' => 'required|exists:kategorija,id',
                 'gamintojas_id' => 'required|exists:gamintojas,id',
                 ]);
-            Komponentas::createkomp($request->only('pavadinimas', 'apibudinimas', 'kaina', 'kategorija_id', 'gamintojas_id',));
+            Komponentas::create($request->only('pavadinimas', 'apibudinimas', 'kaina', 'kategorija_id', 'gamintojas_id',));
             return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
         }
         
@@ -55,22 +55,22 @@ class KatController extends Controller
         
         public function createTipas()
         {
-            return view('kat.createBrand');
+            return view('kat.createTipas');
         }
         public function storeTipas(Request $request)
         {
             $request->validate([
                 'pavadinimas' => 'required|string',
                 ]);
-            Gamintojas::create($request->only('pavadinimas',));
+            Tipas::create($request->only('pavadinimas',));
             return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
         }
 
         public function createKateg()
         {
-            $tip = Tipas::all();
+            $tipai = Tipas::all();
             
-            return view('kat.createKateg', compact('tip'));
+            return view('kat.createKateg', compact('tipai'));
         }
         public function storeKateg(Request $request)
         {
@@ -78,7 +78,7 @@ class KatController extends Controller
                 'pavadinimas' => 'required|string',
                 'tipas_id' => 'required|exists:tipas,id',
                 ]);
-            Komponentas::createkomp($request->only('pavadinimas', 'tipas_id'));
+            Kategorija::create($request->only('pavadinimas', 'tipas_id'));
             return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
         }
 }

@@ -13,7 +13,7 @@
         <div>
             <label for="tipas_id">tipas:</label>
             <select name="tipas_id" required>
-                @foreach ($tip as $Tipas)
+                @foreach ($tipai as $Tipas)
                     <option value="{{ $Tipas->id }}">{{ $Tipas->pavadinimas }}</option>
                 @endforeach
             </select>
