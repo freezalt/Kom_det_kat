@@ -27,6 +27,9 @@
                     <option value="{{ $kategorija->id }}">{{ $kategorija->pavadinimas }}</option>
                 @endforeach
             </select>
+            @auth
+            <a href="{{ route('kat.createKateg') }}">pridėti nauja gamintoją</a>
+            @endauth
         </div>
 
         <div>

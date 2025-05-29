@@ -10,7 +10,7 @@
 <nav style="background-color: #f3f4f6; padding: 10px;">
 <a href="{{ route('kat.index') }}">Home</a>
 @auth
-<a href="{{ route('kat.createkomp') }}{{ route('kat.createBrand') }}" style="margin-left: 10px;">Add
+<a href="{{ route('kat.createkomp') }} {{ route('kat.createBrand') }} {{ route('kat.createTipas') }}" style="margin-left: 10px;">Add
 Contact</a>
 <form method="POST" action="{{ route('logout') }}" style="display:
 inline; margin-left: 10px;">
@@ -19,8 +19,7 @@ inline; margin-left: 10px;">
 </form>
 @else
 <a href="{{ route('login') }}" style="margin-left: 10px;">Login</a>
-<a href="{{ route('register') }}" style="margin-left:
-10px;">Register</a>
+<a href="{{ route('register') }}" style="margin-left:10px;">Register</a>
 @endauth
 </nav>
 <div class="container" style="padding: 20px;">

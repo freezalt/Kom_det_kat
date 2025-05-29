@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class sarasas extends Model
 {
     use HasFactory;
+    protected $table = 'sarasas';
     protected $fillable = ['kiekis'];
 }
