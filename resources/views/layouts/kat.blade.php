@@ -10,7 +10,7 @@
 <nav style="background-color: #f3f4f6; padding: 10px;">
 <a href="{{ route('kat.index') }}">Home</a>
 @auth
-<a href="{{ route('kat.create') }}" style="margin-left: 10px;">Add
+<a href="{{ route('kat.createkomp') }}{{ route('kat.createBrand') }}" style="margin-left: 10px;">Add
 Contact</a>
 <form method="POST" action="{{ route('logout') }}" style="display:
 inline; margin-left: 10px;">

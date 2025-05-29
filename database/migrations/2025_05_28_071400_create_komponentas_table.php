@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('pavadinimas');
             $table->string('apibudinimas');
             $table->decimal('kaina', 10, 2);
-            $table->foreignId('kategorija_id')->reference("id")->on("kategorija");
-            $table->foreignId('gamintojas_id')->reference("id")->on("gamintojas");
+            $table->foreignId('kategorija_id')->constrained("kategorija");
+            $table->foreignId('gamintojas_id')->constrained("gamintojas");
             $table->timestamps();
         });
     }

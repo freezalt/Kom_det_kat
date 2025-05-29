@@ -9,8 +9,10 @@ Route::get('/', function () {
 
 Route::prefix('kat')->group(function () {
     Route::get('/', [KatController::class, 'index'])->name('kat.index');
-    Route::get('/kat/create', [KatController::class, 'create'])->middleware('auth')->name('kat.create');
-    Route::post('/kat', [KatController::class, 'store'])->middleware('auth')->name('kat.store');
+    Route::get('/kat/createkomp', [KatController::class, 'createkomp'])->middleware('auth')->name('kat.createkomp');
+    Route::post('/kat/storekomp', [KatController::class, 'storekomp'])->middleware('auth')->name('kat.storekomp');
+    Route::get('/kat/createBrand', [KatController::class, 'createBrand'])->middleware('auth')->name('kat.createBrand');
+    Route::post('/kat/storeBrand', [KatController::class, 'storeBrand'])->middleware('auth')->name('kat.storeBrand');
 });
 Route::middleware([
     'auth:sanctum',

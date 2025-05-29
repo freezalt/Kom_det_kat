@@ -1,7 +1,7 @@
 @extends('layouts.kat')
 @section('content')
 <div class="container">
-<h2>Contact List</h2>
+<h2>komponentu sarasas</h2>
 @if(session('success'))
 <div style="color: green">{{ session('success') }}</div>
 @endif
@@ -11,7 +11,7 @@
 @endforeach
 </ul>
 @auth
-<a href="{{ route('kat.create') }}">Add New Contact</a>
+<a href="{{ route('kat.createkomp') }}">pridėti nauja komponentą</a>
 @endauth
 </div>
 @endsection

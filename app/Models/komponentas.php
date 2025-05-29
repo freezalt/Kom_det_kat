@@ -12,5 +12,5 @@ class komponentas extends Model
     protected $table = 'komponentas';
 
     protected $fillable = ['pavadinimas', 'apibūdinimas', 'kaina'];
-    //
+    
 }
