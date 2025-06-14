@@ -9,6 +9,6 @@ class kategorija extends Model
 {
     use HasFactory;
     protected $table = 'kategorija';
-    protected $fillable = ['pavadinimas'];
+    protected $fillable = ['pavadinimas', 'tipas_id'];
     //
 }

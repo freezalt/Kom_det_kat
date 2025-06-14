@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('kategorija', function (Blueprint $table) {
             $table->id();
             $table->string('pavadinimas');
-            $table->foreignId('tipas_id')->reference("id")->on("tipas");
+            $table->foreignId('tipas_id')->references("id")->on("tipas");
             $table->timestamps();
         });
     }

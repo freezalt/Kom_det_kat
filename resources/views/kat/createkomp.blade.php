@@ -45,6 +45,6 @@
         </div>
 
         <button type="submit">prideti</button>
-</form>
+    </form>
 </div>
 @endsection

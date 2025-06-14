@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('komp_specs', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('komponentas_id')->reference("id")->on("komponentas");
+            $table->foreignId('komponentas_id')->references("id")->on("komponentas");
             $table->string('spec_pavad');
             $table->string('spec_verte');
             $table->timestamps();

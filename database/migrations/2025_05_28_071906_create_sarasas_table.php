@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('sarasas', function (Blueprint $table) {
             $table->id();
             $table->integer('kiekis');
-            $table->foreignId('sandelys_id')->reference("id")->on("sandelys");
-            $table->foreignId('komponentas_id')->reference("id")->on("komponentas");
+            $table->foreignId('sandelys_id')->references("id")->on("sandelys");
+            $table->foreignId('komponentas_id')->references("id")->on("komponentas");
             $table->timestamps();
         });
     }

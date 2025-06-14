@@ -7,11 +7,14 @@
 @endif
 <ul>
 @foreach($komp as $komponent)
-<li>{{ $komp->name }}</li>
+    <li>{{ $komponent->pavadinimas }} - {{ $komponent->gamintojas->pavadinimas }}</li>
 @endforeach
 </ul>
 @auth
 <a href="{{ route('kat.createkomp') }}">pridėti nauja komponentą</a>
+@endauth
+@auth
+<a href="{{ route('kat.openSarasas') }}">eiti i sarasa</a>
 @endauth
 </div>
 @endsection
