@@ -1,7 +1,7 @@
 @extends('layouts.kat')
 @section('content')
 <div class="container">
-    <h2>pridėti kategorija</h2>
+    <h2 style="text-decoration: underline;">pridėti kategorija</h2>
     <form method="POST" action="{{ route('kat.storeKateg') }}">
         @csrf
 
@@ -18,11 +18,11 @@
                 @endforeach
             </select>
             @auth
-            <a href="{{ route('kat.createTipas') }}">pridėti nauja Tipa</a>
+            <a href="{{ route('kat.createTipas') }}" style="color:darkblue">pridėti nauja Tipa</a>
             @endauth
         </div>
 
-        <button type="submit">prideti</button>
+        <button type="submit" style="color:green;">prideti</button>
 </form>
 </div>
 @endsection

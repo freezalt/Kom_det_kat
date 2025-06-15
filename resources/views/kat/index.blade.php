@@ -1,7 +1,11 @@
 @extends('layouts.kat')
 @section('content')
 <div class="container">
-<h2>komponentu sarasas</h2>
+<h2 style="text-decoration: underline;">
+    Komponentų sąrašas:
+</h2>
+
+
 @if(session('success'))
 <div style="color: green">{{ session('success') }}</div>
 @endif
@@ -11,10 +15,10 @@
 @endforeach
 </ul>
 @auth
-<a href="{{ route('kat.createkomp') }}">pridėti nauja komponentą</a>
+<a href="{{ route('kat.createkomp') }}" style="color:darkblue">pridėti nauja komponentą</a><br>
 @endauth
 @auth
-<a href="{{ route('kat.openSarasas') }}">eiti i sarasa</a>
+<a href="{{ route('kat.openSarasas') }}" style="color:brown">eiti į bendrą sąrašą</a>
 @endauth
 </div>
 @endsection

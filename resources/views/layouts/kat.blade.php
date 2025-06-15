@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Contacts App</title>
+<title>Komponentų sąrašas</title>
 <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -10,8 +10,6 @@
 <nav style="background-color: #f3f4f6; padding: 10px;">
 <a href="{{ route('kat.index') }}">Home</a>
 @auth
-<a href="{{ route('kat.createkomp') }} {{ route('kat.createBrand') }} {{ route('kat.createTipas') }}" style="margin-left: 10px;">Add
-Contact</a>
 <form method="POST" action="{{ route('logout') }}" style="display:
 inline; margin-left: 10px;">
 @csrf

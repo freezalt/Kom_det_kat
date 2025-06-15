@@ -1,7 +1,7 @@
 @extends('layouts.kat')
 @section('content')
 <div class="container">
-<h2>Specifikacijos komponentui: {{ $komp->pavadinimas }}</h2>
+<h2 style="text-decoration: underline;">Specifikacijos komponentui: {{ $komp->pavadinimas }}</h2>
 
     @foreach($specs as $spec)
         <div>
