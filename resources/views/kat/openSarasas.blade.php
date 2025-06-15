@@ -16,7 +16,7 @@
 @endforeach
 </ul>
 @auth
-<a href="{{ route('kat.createSarasas') }}" style="color:darkblue">prideti komponentą</a>
+<a href="{{ route('kat.createSarasas') }}" style="color:darkblue">prideti į sąrašą</a>
 @endauth
 </div>
 @endsection
