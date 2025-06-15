@@ -14,6 +14,10 @@ class Komponentas extends Model
     {
         return $this->belongsTo(Gamintojas::class);
     }
+    public function specs()
+    {
+        return $this->hasMany(Komp_Spec::class, 'komponentas_id');
+    }
     protected $fillable = ['pavadinimas', 'apibudinimas', 'kaina', 'kategorija_id', 'gamintojas_id'];
 
 }

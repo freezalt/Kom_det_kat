@@ -45,6 +45,11 @@ Route::prefix('kat')->group(function () {
     Route::get('/kat/openSarasas', [KatController::class, 'openSarasas'])->middleware('auth')->name('kat.openSarasas');
     Route::get('/kat/createSarasas', [KatController::class, 'createSarasas'])->middleware('auth')->name('kat.createSarasas');
     Route::post('/kat/storeSarasas', [KatController::class, 'storeSarasas'])->middleware('auth')->name('kat.storeSarasas');
+
+    Route::get('/kat/createKompSpec/{komponentas_id}', [KatController::class, 'createSpec'])->middleware('auth')->name('kat.createKompSpec');
+    Route::post('/kat/storeSpec', [KatController::class, 'storeSpec'])->middleware('auth')->name('kat.storeSpec');
+
+    Route::get('/kat/{id}/specSarasas', [KatController::class, 'specSarasas'])->middleware('auth')->name('kat.specSarasas');
 });
 
 require __DIR__.'/auth.php';

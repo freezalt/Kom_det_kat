@@ -7,7 +7,12 @@
 @endif
 <ul>
 @foreach($sar as $sarasas)
-    <li>{{ $sarasas->komponentas->pavadinimas }} - {{ $sarasas->kiekis }} - {{ $sarasas->sandelys->pavadinimas }}</li>
+    <li>
+        {{ $sarasas->komponentas->pavadinimas }} - {{ $sarasas->kiekis }} - {{ $sarasas->sandelys->pavadinimas }}
+        @auth
+        <a href="{{ route('kat.createKompSpec', ['komponentas_id' => $sarasas->komponentas->id]) }}">prideti komponentą</a>
+        @endauth
+    </li>
 @endforeach
 </ul>
 @auth

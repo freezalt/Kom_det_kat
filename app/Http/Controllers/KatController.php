@@ -116,9 +116,10 @@ class KatController extends Controller
         public function openSarasas()
         {
             $sar = Sarasas::all();
+            $komp = Komponentas::all();
             $sar = Sarasas::with('sandelys')->get();
             $sar = Sarasas::with('komponentas')->get();
-            return view('kat.openSarasas', compact('sar'));
+            return view('kat.openSarasas', compact('sar', 'komp'));
         }
         public function createSarasas()
         {
@@ -128,16 +129,40 @@ class KatController extends Controller
             return view('kat.createSarasas', compact('sar', 'san', 'komp'));
         }
         public function storeSarasas(Request $request)
-{
-    $request->validate([
-        'kiekis' => 'required|numeric',
-        'sandelys_id' => 'required|exists:sandelys,id',
-        'komponentas_id' => 'required|exists:komponentas,id',
-    ]);
+        {
+        $request->validate([
+            'kiekis' => 'required|numeric',
+            'sandelys_id' => 'required|exists:sandelys,id',
+            'komponentas_id' => 'required|exists:komponentas,id',
+            ]);
 
-    Sarasas::create($request->only('kiekis', 'sandelys_id', 'komponentas_id'));
+        Sarasas::create($request->only('kiekis', 'sandelys_id', 'komponentas_id'));
 
-    return redirect()->route('kat.openSarasas')->with('success', 'Sąrašas pridėtas sėkmingai!');
-}
+        return redirect()->route('kat.openSarasas')->with('success', 'Sąrašas pridėtas sėkmingai!');
+        }
 
+        public function createSpec($komponentas_id)
+        {
+            return view('kat.createKompSpec', compact('komponentas_id'));
+        }
+        public function storeSpec(Request $request)
+        {
+            $request->validate([
+                'komponentas_id' => 'required|exists:komponentas,id',
+                'spec_pavad' => 'required|string',
+                'spec_verte' => 'required|string',
+                ]);
+            Komp_Spec::create($request->only('komponentas_id', 'spec_pavad', 'spec_verte'));
+            return redirect()->route('kat.index')->with('success', 'Contact added successfully!');
+        }
+
+        public function specSarasas($id)
+        {
+            $komp = Komponentas::find($id);
+    if (!$komp) {
+        return redirect()->route('kat.index')->withErrors(['error' => 'Komponentas nerastas.']);
+    }
+            $specs = $komp->specs;
+            return view('kat.specSarasas', compact('specs', 'komp'));
+        }
 }

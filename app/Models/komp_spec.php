@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class komp_spec extends Model
 {
     use HasFactory;
-    protected $table = 'komp_spec';
-    protected $fillable = ['spec_pavad', 'spec_verte', 'komponento_id'];
+    protected $table = 'komp_specs';
+    protected $fillable = ['komponentas_id', 'spec_pavad', 'spec_verte'];
 }

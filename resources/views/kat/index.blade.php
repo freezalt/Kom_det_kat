@@ -7,7 +7,7 @@
 @endif
 <ul>
 @foreach($komp as $komponent)
-    <li>{{ $komponent->pavadinimas }} - {{ $komponent->gamintojas->pavadinimas }}</li>
+    <li><a href="{{ route('kat.specSarasas', $komponent->id)}}">{{ $komponent->pavadinimas }} - {{ $komponent->gamintojas->pavadinimas }}</li>
 @endforeach
 </ul>
 @auth
