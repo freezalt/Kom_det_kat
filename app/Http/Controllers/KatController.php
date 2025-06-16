@@ -18,6 +18,7 @@ class KatController extends Controller
         {
             $komp = Komponentas::all();
             $komp = Komponentas::with('gamintojas')->get();
+            $komp = Komponentas::with('kategorija')->get();
             return view('kat.index', compact('komp'));
         }
 
